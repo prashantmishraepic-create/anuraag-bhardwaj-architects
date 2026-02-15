@@ -1101,6 +1101,21 @@
     </style>
 </head>
 <body>
+    <!-- DEMO WATERMARK -->
+<div style="
+position: fixed;
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%) rotate(-30deg);
+font-size: 90px;
+color: rgba(0,0,0,0.04);
+z-index: 9999;
+pointer-events: none;
+white-space: nowrap;
+font-weight: bold;">
+DEMO VERSION
+</div>
+
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-wrapper">
@@ -1576,6 +1591,17 @@
     <a href="https://wa.me/919999999999" class="whatsapp-btn" target="_blank" aria-label="Chat on WhatsApp">💬</a>
 
     <script>
+        // Disable Right Click
+document.addEventListener('contextmenu', function(e) {
+    e.preventDefault();
+});
+// Disable F12
+document.addEventListener('keydown', function(e) {
+    if (e.keyCode == 123) {
+        e.preventDefault();
+    }
+});
+
         // Mobile Menu Toggle
         const menuToggle = document.getElementById('menuToggle');
         const navMenu = document.getElementById('navMenu');
@@ -1674,6 +1700,11 @@
             el.style.transition = 'all 0.8s ease';
             observer.observe(el);
         });
+        // Prevent Unauthorized Hosting
+if (window.location.hostname !== "prashantmishraepic-create.github.io") {
+    document.body.innerHTML = "<h1 style='text-align:center;margin-top:100px;'>Unauthorized Hosting Detected</h1>";
+}
+
     </script>
 </body>
 </html>
